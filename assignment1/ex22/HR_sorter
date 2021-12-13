@@ -1,0 +1,35 @@
+#!/bin/bash
+# Put your code here
+# You may only use the following external programs: ls, echo, awk, cat, grep, iirt, wc, bc
+
+#Variables___________________________________________________________________________________________________________________________
+declare -a files 	#array for storing files in submissions/
+declare -a keys		#array for storing the keywords in input.txt
+declare -a values 	#array for storing the values in input.txt
+declare -a scores 	#array for storing score of each file, indices correlate
+declare -a temp
+foo=0
+
+#Put files in submissions/* into array_______________________________________________________________________________________________
+files=(submissions/*)
+
+#Put input.txt into two arrays_______________________________________________________________________________________________________
+keys=($(cat input.txt | awk '{print $1}'))
+values=($(cat input.txt | awk '{print $NF}'))
+
+#Search for and calculate scores_____________________________________________________________________________________________________ 
+for ((i=0; i<${#files[@]}; i++));
+do
+	echo "${files[$i]}"
+	for ((j=0; j<${#keys[@]}; j++));
+	do
+		let foo=${temp[$j]} * ${values[$m]}
+	done
+	
+done
+
+#Sort and Print______________________________________________________________________________________________________________________
+
+
+
+
